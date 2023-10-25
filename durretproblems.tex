@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+\usepackage{../../../../../Latex/cameron_style}
+
+\lhead{Cameron Fish - Durret Problems}
+\rhead{Probability - Fall 2023 - Marshall}
+
+\begin{document}
+
+\subsection*{Notation}
+
+We sometimes write $A \in \aleph_0$ to mean ``$A$ is countable''. and $A \in \aleph_1$ to mean ``$A$ is uncountable''. 
+
+$\chi \sim N(0,1)$ means $\X$ has a normal distribution iwth mean 0 and std 1.
+
+\subsection*{1.1.1}
+
+We show that $(\RR, \mathcal{F}, P)$ is a probability space, where $\mathcal{F} = \{A \sub \RR \st A \in \aleph_0 \text{ or } A^c \in \aleph_0\}$ and $P(A) = 0$ if $A \in \aleph_0$ and $1$ if $A^c \in \aleph_0$. We must first show that $\mathcal{F}$ is a $\sigma$-algebra. 
+
+\begin{itemize}
+    \item Let $A \in \mathcal{F}$. If $A \in \aleph_0$, then $A^c \in \mathcal{F}$ since $(A^c)^c = A \in \aleph_0$. If $A^c \in \aleph_0$, then $(A^c)^c = A \in \mathcal{F}$ since $A^c \in \aleph_0$.
+    \item Let $(A_i) \sub \mathcal{F}$ be a countable sequence of sets. Then either $A = \bigcup A_i$ is countable or not. If $A$ is countable, then $A \in \mathcal{F}$. If $A$ is uncountable, then at least one $A_k$ must be uncountable. But $A_k \in F$, so $A_k^c \in \aleph_0$. But then $A^c = \bigcap A_i^c \sub A_k^c \in \aleph_0$. Hence $A \in F$.
+\end{itemize} 
+
+It remains to check that $P$ is a probability measure. 
+
+\begin{itemize}
+    \item Let $A \in \mathcal{F}$. Then $P(A) = 0$ or $1$, so $P(A) \geq P(\emptyset) = 0$ since $\emptyset \in \aleph_0$.
+    \item $P(\RR) = 1$ since $\RR^c = \emptyset \in \aleph_0$.
+    \item Let $(A_i) \sub \mathcal{F}$ be a countable sequence of disjoint sets. We must show $P(\bigcup A_i) = \sum_i P(A_i)$. Observe that if each $A_i$ is countable, then $\bigcup A_i$ is countable and so both sides of the equality are zero. We claim that in fact at most one $A_i$ can be uncountable. In that case, $\bigcup A_i$ is uncountable and $\sum_i P(A_i) = 1$, so the equality holds. Suppose $A_i$ and $A_j$ are two uncountable disjoint sets in $\mathcal{F}$. Then, \[\RR = \emptyset^c = (A_i \cap A_j)^c = A_i^c \cup A_j^c.\] This is a contradiction, since $A_i^c \cup A_j^c$ is countable, but $\RR$ is not. 
+\end{itemize}
+
+\subsection*{1.1.2 (TBD)}
+
+Let $\mathcal{S}_d$ be the collection of sets of the form \[(a_1, b_1]\times ... \times (a_d, b_d]\sub \RR^d, -\infty\leq a_i < b_i \leq \infty\] and in addition the empty set. We claim that $\sigma(\mathcal{S}_d) = \mathcal{R}^d$, the Borel subsets of $\RR$. 
+
+\subsection*{1.1.3}
+
+We show that the $\sigma$-alegbra $\mathcal{R}^d$ of Borel sets in $\RR^d$ is countably generated. It suffices to provide a countable collection of sets in $\mathcal{R}^d$ that generate any open subset of $\RR^d$. Let $Q$ be the following countable collection: \[Q = \{B(x, 1/n): x \in \QQ^d, n \in \NN\}\] where $B(x, 1/n) := \{y \in \RR^d: |x-y|<1/n\}$. Let $U \sub \RR^d$ be any open set. Let $Q' = Q \cap 2^U$ (i.e. the subcollection of $Q$ consisting of subsets of $U$). We claim that \[U = \bigcup_{V\in Q'} V\] Clearly $\bigcup_{V\in Q'} V \sub U$. For the other inclusion, let $x \in U$. Then, since $U$ is open, there exists a number $N \in \NN$ such that $B(x, 1/N) \sub U$. By the density of $\QQ^d \sub \RR^d$, there exists a point $p \in \QQ^d$ such that $d(x,p) < \frac{1}{2N}$. But then $x \in B(p, \frac{1}{2N})$ and this ball is a member of $Q'$ since if $z \in U^c$ is arbitrary then \[\frac{1}{N} < d(x,z) \leq d(x, p) + d(p, z) < \frac{1}{2N} + d(p,z)\] and hence $d(p,z) > \frac{1}{2N}$, implying $d(p, U^c) = \inf_{z\in U^c} d(p, z) > \frac{1}{2N}$. Thus $x \in \bigcup_{V\in Q'} V$.
+
+\subsection*{1.1.4 (TBD)}
+ \begin{enumerate}
+    \item[(i)] Suppose $F_1 \sub F_1 \sub ...$ are $\s$-algebras. We show $F := \bigcup F_i$ is a $\s$-algebra. Let $A \in F$. Then $A \in F_k$ for some $k$. Hence $A^c \in F_k \sub F$, since $F_k$ is a $\s$-algebra. If also $B \in F$ then $B \in F_j$ for some $j$. and we have $A \in F_N$ for all $N \geq k$ and $B \in F_M$ for all $M \geq j$. In particular $A \in F_s$ and $B \in F_s$, where $s = \max{j,k}$ so $A \cup B \in  F_s$ since $F_s$ is a $\s$-algebra. Hence $A \cup B \in F$, and we are done.
+    \item[(ii)]
+ \end{enumerate}
+
+\subsection*{1.1.5 (TBD)}
+
+\subsection*{1.2.1 (NPR)}
+
+Suppose $X$ and $Y$ are random variables on $(\W,F, P)$ and let $A \in F$. We show that if $Z(\w) := X(\w)$ for $\w \in A$ and $Z(\w) := Y(\w)$ for $\w \in A^c$, then $Z$ is a random variable. Clearly $Z$ maps $\W$ to $\RR$. It remains to show that $Z$ is $F$-measurable. Let $B$ be a Borel subset of $\RR$. Then: \begin{align*}
+    Z^{-1}(B) &= \{\w \in \W \st Z(\w) \in B\} \\
+    &= \{\w \in A \st Z(\w) \in B\}\cup \{\w \in A^c \st Z(\w) \in B\} \\
+    &= \{\w \in A \st X(\w) \in B\}\cup \{\w \in A^c \st Y(\w) \in B\} \\
+    &\sub \{\w \in \W \st X(\w) \in B\}\cup \{\w \in \W \st Y(\w) \in B\} \\
+    &= X^{-1}(B) \cup Y^{-1}(B) \\
+    & \in F,
+\end{align*} as desired.
+
+\subsection*{1.2.2 (NPR)}
+
+Suppose $\chi \sim N(0,1)$. Using Theorem 1.2.6, we have the estimate: \[\left(\frac{1}{4} - \frac{1}{4^3}\right)e^{\frac{-4^2}{2}} \leq \int_4^\infty e^{\frac{-y^2}{2}} \,dy \leq \frac{1}{4}e^{\frac{-4^2}{2}}.\] Hence: \[\frac{1}{\sqrt{2\pi}}\left(\frac{1}{4} - \frac{1}{4^3}\right)e^{\frac{-4^2}{2}}\leq P(\chi \geq 4) \leq \frac{1}{4\sqrt{2\pi}}e^{\frac{-4^2}{2}}.\] i.e. \[3.13664 \cdot 10^{-5}\leq P(\chi \geq 4) \leq 3.34575 \cdot 10^{-5}\] Note that the true value is $P(\chi \geq 4) \approx 3.16712 \cdot 10^{-5}$.
+
+\subsection*{1.2.3}
+
+We show that a distribution function has only countably many discontinuities. Suppose $J \sub \RR$ is the set of discontinuities of a distribution function $F$. Observe that, for each $a \in J$, we have $F(a) - F(a-) = F(a) - \lim_{y\uparrow a} F(y) > 0$ since $F$ is discontinuous at $a$ and nondecreasing. Hence the open intervals $(F(a-), F(a)) \sub \RR$ have nonzero measure. The intervals are also disjoint, since $F$ is nondecreasing. But then, \[\{(F(a-), F(a)) \st a \in J\}\] is a collection of nonempty disjoint intervals in $\RR$. We may (by the Axiom of Choice) define a function $\phi: J \to \QQ$ via $\phi(a) = q_a$ where $q_a$ is an arbitrary rational number in the interval $(F(a-), F(a))$. This function is injective because the intervals are disjoint. Hence the cardinality of $J$ must be at most the cardinality of $\QQ$. In particular $J$ cannot be uncountable.
+
+\subsection*{1.2.4 (NPR)}
+
+We show that if $F(x) = P(X\leq x)$ is continuous, then $Y := F(X)$ has a uniform distribution on $(0,1)$. Since $F$ is continuous, for each $y \in (0,1)$ there exists by IVT an $x \in \RR$ such that $F(x) = y$. Define $G:(0,1) \to \RR$ via $G(y) = \sup \{x \in \RR \st F(x) = y\}$. Observe that: \begin{enumerate}
+    \item[(a)] $G$ is strictly increasing, 
+    \item[(b)] $G(F(x)) \geq x$ for all $x \in \RR$, and 
+    \item[(c)] $F(G(y)) = y$ for all $y \in (0,1)$. \end{enumerate}
+    
+    Let $y \in (0,1)$ and consider the sets: \[A = \{\w \in \W \st G(F(X(\w))) \leq G(y)\}\]\[B = \{\w \in \W \st X(\w) \leq G(y)\}.\] We claim $A = B$ as follows. Let $\w \in A$. Then $X(\w) \leq G(F(X(\w))) \leq G(y)$ by (b). Hence $\w \in B$. On the other hand, if $\w \in B$, then $G(F(X(\w))) \leq G(F(G(y)))$ since both $F$ and $G$ are nondecreasing. But $G(F(G(y))) = G(y)$ by (c). Hence $\w \in A$. Therefore \[(*) \quad\quad P(G(F(X)) \leq G(y)) = P(X \leq G(y)). \] Hence, we have for any $y \in (0,1)$:\begin{align*}
+    P(Y \leq y) &= P(F(X) \leq y)\\
+    &= P(G(F(X)) \leq G(y)) \quad \text{by (a)} \\
+    &= P(X \leq G(y))\quad \text{by ($*$)}\\
+    &= F(G(y)) \\
+    &= y \quad \text{by (c)}
+\end{align*} as desired.
+
+\subsection*{1.2.5 (TBD)}
+
+do I really want to latex this 
+
+\subsection*{1.2.6 (TBD)}
+
+\subsection*{1.2.7 (TBD)}
+
+\subsection*{1.3.1 (TBD)}
+
+\subsection*{1.3.2 (TBD)}
+
+\subsection*{1.3.3}
+
+We show that if $X_n \to X : \Omega \to \RR$ almost surely and $f$ is continuous on $\RR$, then $f(X_n) \to f(X)$ almost surely. Assume that Recall that $X_n \to X$ a.s means $P(\Omega_0) = 1$, where \[\Omega_0 = \{\omega \in \Omega\st \lim_{n\to \infty} X_n(\omega) \text{ exists}\}.\] Let \[\Omega_1 =  \{\omega \in \Omega\st \lim_{n\to \infty} f(X_n(\omega)) \text{ exists}\}.\] If $\omega \in \Omega_0$, then the limit $X(\omega) := \lim_{n\to \infty} X_n(\omega)$ exists and so, by continuity, the limit \[\lim_{x\to \infty } f(X_n(\omega)) = f(\lim_{n\to \infty} X_n(\omega)) = f(X(\omega))\] exists. Hence $\Omega_0 \sub \Omega_1$. But then $1 \geq P(\Omega_1) \geq P(\Omega_0) = 1$, hence $f(X_n) \to f(X)$ a.s.
+
+\subsection*{1.3.4 (TBD)}
+
+\subsection*{1.3.5 (TBD)}
+
+\subsection*{1.3.6 (TBD)}
+
+\subsection*{1.3.7 (TBD)}
+
+\subsection*{1.3.8 (TBD)} 
+
+\subsection*{1.3.9 (TBD)}
+
+\subsection*{1.4.1 (TBD)}
+
+\subsection*{1.4.2 (TBD)}
+
+\subsection*{1.4.3 (TBD)}
+
+\subsection*{1.4.4 (TBD)}
+
+\subsection*{1.5.1 (TBD)}
+\subsection*{1.5.2 (TBD)}
+\subsection*{1.5.3 (TBD)}
+\subsection*{1.5.4 (TBD)}
+\subsection*{1.5.5 (TBD)}
+\subsection*{1.5.6 (TBD)}
+\subsection*{1.5.7 (TBD)}
+\subsection*{1.5.8 (TBD)}
+\subsection*{1.5.9 (TBD)}
+\subsection*{1.5.10 (TBD)}
+
+
+
+\end{document}
