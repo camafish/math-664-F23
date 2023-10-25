@@ -1,0 +1,471 @@
+\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{cameron_style}[2019/11/29  v0.1]
+
+% BEGIN_FOLD %preamble
+\usepackage{changepage} 
+\usepackage{parskip}
+\usepackage{amsmath,amsfonts,stmaryrd,amssymb}
+\usepackage{amsthm,amssymb,scrextend}
+\usepackage{enumitem}
+%\usepackage{cite}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{todonotes}
+\usepackage{mathabx}
+\usepackage{MnSymbol}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{geometry} 
+\usepackage{titlecaps}
+\usepackage{mathrsfs}
+\geometry{
+	paper=letterpaper, % Paper size, change to letterpaper for US letter size
+	top=2.5cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=3cm, % Left margin
+	right=3cm, % Right margin
+	headheight=16pt, % Header height
+	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=.5cm, % Space from the top margin to the baseline of the header
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+% \fancyfoot[C]{\thepage}
+\linespread{1}
+\pagestyle{fancy}
+%\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+% END_FOLD
+
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\mbox{}\hfill$\blacktriangle$}
+
+\newenvironment{indented}{\begin{addmargin}[1em]{0em}}{\end{addmargin}}
+
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{subproof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\hfill$\square$}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+	\newcommand{\pline}{\rule[0.5ex]{\linewidth}{.25pt}\\} % Central horizontal line for sections
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+%	BEGIN_FOLD
+	% \newcommand{\N}{\mathbb{N}}							% Natural numbers
+	% \newcommand{\Z}[1][\null]{\mathbb{Z}_{#1}}			% Integers
+	% \newcommand{\Q}{\mathbb{Q}}							% Rational
+	% \newcommand{\R}{\mathbb{R}}							% Reals
+	% \newcommand{\C}{\mathbb{C}}							% Complex
+	% \def\PP{{\mathbb P}}						% P
+
+	\def\a{\alpha}
+	\def\b{\beta}
+	\def\g{\gamma}
+	\def\d{\delta}
+	\def\e{\epsilon}
+	\def\z{\zeta}
+	%\def\eta{\eta}
+	\def\th{\theta}
+	\def\i{\iota}
+	\def\k{\kappa}
+	\def\l{\lambda}
+	\def\m{\mu}
+	\def\n{\nu}
+	%\def\xi{\xi}
+	%\def\o{\omicron}
+	\def\p{\pi}
+	\def\s{\sigma}
+	\def\t{\tau}
+	\def\u{\upsilon}
+	\def\ph{\phi}
+	%\def\x{\chi}
+	\def\ps{\psi}
+	\def\w{\omega}
+
+	\def\A{\Alpha}
+	\def\B{\Beta}
+	\def\G{\Gamma}
+	\def\D{\Delta}
+	\def\E{\Epsilon}
+	\def\Z{\Zeta}
+	%\def\eta{\eta}
+	\def\Th{\Theta}
+	\def\I{\Iota}
+	\def\K{\Kappa}
+	\def\L{\Lambda}
+	\def\M{\Mu}
+	\def\N{\Nu}
+	%\def\xi{\xi}
+	%\def\O{\Omicron}
+	\def\P{\Pi}
+	\def\S{\Sigma}
+	\def\T{\Tau}
+	\def\U{\Upsilon}
+	\def\Ph{\Phi}
+	\def\X{\Xi}
+	\def\Ps{\Psi}
+	\def\W{\Omega}
+
+	\def\AA{{\mathbb A}}\def\BB{{\mathbb B}}\def\CC{{\mathbb C}}
+	\def\DD{{\mathbb D}}\def\EE{{\mathbb E}}\def\FF{{\mathbb F}}
+	\def\GG{{\mathbb G}}\def\HH{{\mathbb H}}\def\II{{\mathbb I}}
+	\def\JJ{{\mathbb J}}\def\KK{{\mathbb K}}\def\LL{{\mathbb L}}
+	\def\MM{{\mathbb M}}\def\NN{{\mathbb N}}\def\OO{{\mathbb O}}
+	\def\PP{{\mathbb P}}\def\QQ{{\mathbb Q}}\def\RR{{\mathbb R}}
+	\def\SS{{\mathbb S}}\def\TT{{\mathbb T}}\def\UU{{\mathbb U}}
+	\def\VV{{\mathbb V}}\def\WW{{\mathbb W}}\def\XX{{\mathbb X}}
+	\def\YY{{\mathbb Y}}\def\ZZ{{\mathbb Z}}
+	
+	\def\RPn{\mathbb{R}\mathrm{P}^n}
+	\def\RPm{\mathbb{R}\mathrm{P}^m}
+
+	\def\CPn{\mathbb{C}\mathrm{P}^n}
+	\def\CPm{\mathbb{C}\mathrm{P}^m}
+
+	\newcommand{\RP}[1]{\mathbb{R}\mathrm{P}^{#1}}
+	\newcommand{\CP}[1]{\mathbb{C}\mathrm{P}^{#1}}
+	
+
+%	END_FOLD
+
+%	BEGIN_FOLD
+	\renewcommand{\bar}[1]{\overline{#1}}				% bar over
+%	END_FOLD
+
+%	BEGIN_FOLD
+	\newcommand{\st}{:}									% such that
+	%\newcommand{\iff}{\text{ iff }}
+	\newcommand{\of}{\circ}
+	\newcommand{\pf}{\textbf{Proof: }}					% start of proof
+	\newcommand{\thm}{\textbf{Theorem: }}				% declaration of theorem	
+	\newcommand{\sub}{\subset}							% is a subset of
+%	END_FOLD
+
+%	BEGIN_FOLD ------------- % Convex Analysis
+	
+	\newcommand{\core}[1]{\text{core}({#1})}			% core
+	\newcommand{\lin}[1]{\text{lin}({#1})}				% lin
+	\newcommand{\bdry}[1]{\del{#1}}						% boundary
+	%\let\integral\int						% integral
+	%\renewcommand{\int}[1]{\text{int}({#1})}		   	% interior
+	\newcommand{\epi}[1]{\text{epi}({#1})}		   	% interior
+	\newcommand{\dom}[1]{\text{dom}({#1})}		   	% interior
+	\newcommand{\cl}[1]{\overline{#1}}					% closure
+	\newcommand{\tw}[2]{\lambda {#1} + (1 - \lambda) {#2}}					% convex line connecting 1 and 2
+	\newcommand{\twphi}[2]{\varphi {#1} + (1 - \varphi) {#2}}					% convex line connecting 1 and 2
+	\newcommand{\convsetup}{Let $x, y \in X$ and let $0 < \lambda < 1$. }
+	\newcommand{\lam}{\lambda}
+	%\newcommand{\B}{\mathbb{B}}						% closed ball
+	\newcommand{\Ell}{\mathcal{L}}
+	\newcommand{\Ann}{\text{Ann}}
+
+%	END_FOLD
+
+%	BEGIN_FOLD ------------- % General
+
+	\newcommand{\size}[1]{\lvert{#1}\rvert}				% e.g. absolute value
+	\newcommand{\norm}[1]{\Vert{#1}\Vert}				% norm
+	\newcommand{\inv}[1]{{#1}^{-1}}						% inverse function
+	\newcommand{\cross}{\times}							% alii I like
+	\newcommand{\by}{\times}
+	\newcommand{\cts}{\text{continuous }}
+	%\newcommand{\log}
+	\newcommand{\x}{\times}
+	\newcommand{\Span}{\text{Span}}
+	\newcommand{\binomthm}[3]{\sum_{k =0}^{#3} \binom{#3}{k} {#1}^k {#2}^{{#3}-k}}
+
+
+%	END_FOLD
+
+%	BEGIN_FOLD ------------- % Topology
+
+	\newcommand{\del}{\partial}							% boundary
+	\newcommand{\im}{\text{im }}
+	\newcommand{\<}{\langle}
+	\renewcommand{\>}{\rangle}
+	\renewcommand{\deg}{\text{deg }}
+	\newcommand{\Hom}{\text{Hom}}
+		
+%	END_FOLD
+
+\newcommand{\gaussian}{\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}}
+
+\newcommand{\Gal}{\text{Gal}}
+
+\newcommand{\limn}[1]{\lim_{n \to \infty}{#1}}
+\newcommand{\pnorm}[2]{\biggl(\int_{#1} {\size{#2}^p} \ dx \biggr)^{\frac{1}{p}}}
+\newcommand{\vecthree}[3]{\(\begin{pmatrix}
+	{#1} \\
+	{#2} \\
+	{#3}
+\end{pmatrix}\)}
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+\newcommand{\col}[1]{% column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+\newcommand{\row}[1]{% row vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+%\RequirePackage{mathrsfs}	% Heavy script font
+
+%% ------------------------------------------------------------------------------------------------------------------ Text    
+%%	BEGIN_FOLD
+%	
+%	\newcommand{\ie}{i.e.}
+%
+%	\newcommand{\txt}[1]{\text{#1}}			% Regular ass text (no package required)
+%	\newcommand{\txtup}[1]{\textup{#1}}		% Upright text.
+%	\renewcommand{\rm}[1]{\mathrm{#1}}		% Math upright text (Already defined, this is reference)
+%	\newcommand{\bb}[1]{\mathbb{#1}}		% Sets (N, Z, R, etc)	(amsfonts)
+%	\renewcommand{\bf}[1]{\mathbf{#1}}		% Sets filled (N, Z, R, etc white gap filled) (amsfonts)
+%	\renewcommand{\cal}[1]{\mathcal{#1}}	% Light Script (no package required)
+%	\newcommand{\scr}[1]{\mathscr{#1}}		% Heavy Script (mathrsfs)
+%	\renewcommand{\sf}[1]{\mathsf{#1}}		% Used for category theory and set complement
+%
+%%	END_FOLD
+%
+%% ---------------------------------------------------------------------------------------------------- --------- Theorems    
+%%	BEGIN_FOLD
+%	
+%	\theoremstyle{definition}
+%		\newtheorem{definition}{Definition}
+%		\newtheorem*{definition*}{Definition}
+%		\newtheorem{example}{Example}
+%		\newtheorem*{example*}{Example}
+%	
+%	\theoremstyle{plain}
+%		\newtheorem{theorem}{Theorem}
+%		\newtheorem*{theorem*}{Theorem}
+%		\newtheorem{corollary}{Corollary}
+%		\newtheorem*{corollary*}{Corollary}
+%		\newtheorem{lemma}{Lemma}
+%		\newtheorem*{lemma*}{Lemma}
+%		\newtheorem{proposition}{Proposition}
+%		\newtheorem*{proposition*}{Proposition}
+%	
+%	\theoremstyle{remark}
+%		\newtheorem{remark}{Remark}
+%		\newtheorem*{remark*}{Remark}
+%		\newtheorem{hint}{Hint}
+%		\newtheorem*{hint*}{Hint}
+%
+%%	END_FOLD
+%
+%% ------------------------------------------------------------------------------------------------------------ Set Theory    
+%%	BEGIN_FOLD 
+%
+%	\newcommand{\pr}[1]{\left(#1\right)}				% Parentheses
+%	\newcommand{\br}[1]{\left[#1\right]}  				% Brackets
+%	\newcommand{\ar}[1]{\left<#1\right>}				% Angle Brackets
+%	
+%	\newcommand{\N}{\mathbb{N}}							% Natural numbers
+%	\newcommand{\Z}[1][\null]{\mathbb{Z}_{#1}}			% Integers
+%	\newcommand{\Zmod}[1][2]{\Z/#1\Z}					% Integers Mod 
+%	\newcommand{\Q}{\mathbb{Q}}							% Rational
+%	\newcommand{\R}{\mathbb{R}}							% Reals
+%	\newcommand{\extR}{\mathbb{R}^{*}}					% Extended Reals
+%	\newcommand{\C}{\mathbb{C}}							% Complex
+%	\newcommand{\F}{\mathbb{F}}							% Field, or F
+%	\newcommand{\K}{\mathbb{K}}
+%	\newcommand{\E}{\mathbb{E}}							% Euclidean space, or E
+%	\newcommand{\M}{\mathbb{M}}							% Minkoski space, or M
+%	\newcommand{\Hil}{\mathcal{H}}						% Hilbert Space
+%	\renewcommand{\L}{\cal{L}}							% Linear Transformation
+%	
+%	\newcommand{\inclusion}{\lhookrightarrow}				% Inclusion arrow
+%	
+%	\newcommand{\cross}{\times}									% Cross
+%	\newcommand{\by}{\times}									% By (like 3 x 3, that is, 3 by 3)
+%	\newcommand{\union}{\cup}									% Union 						
+%	\newcommand{\Union}[2]{\bigcup_{#1}^{#2}}					% Union (Sum)
+%	\newcommand{\intersection}{\cap}							% Intersection
+%	\newcommand{\Intersection}[2]{\bigcap_{#1}^{#2}} 			% Intersection (Sum)
+%	\newcommand{\inter}{\cap}									% Intersection			(v2)
+%	\newcommand{\Inter}[2]{\bigcap_{#1}^{#2}} 					% Intersection (Sum)    (v2)
+%	\newcommand{\disjointunion}{\sqcup}							% Disjointunion 
+%	\newcommand{\Disjointunion}[2]{\bigsqcup_{#1}^{#2}}			% Disjointunion (Sum)
+%	\newcommand{\Product}[2]{\prod_{#1}^{#2}}					% Product (Sum)
+%	
+%	\newcommand{\order}[1]{\left\lvert#1\right\rvert}			% Order
+%	\newcommand{\cardinality}[1]{\left\lvert#1\right\rvert}		% Cardinality
+%	
+%	\newcommand{\given}{\,\middle\vert\,}				% Given, |
+%	\newcommand{\suchthat}{\,\middle\vert\,}			% Such that, |
+%	\newcommand{\suchthatc}{\,:\,}						% Such that col, :
+%	
+%	\newcommand{\set}[1]{\left\lbrace#1\right\rbrace}		% Set
+%	\newcommand{\sets}[2]{\set{#1 \suchthat #2}}			% Set (s.t.)
+%	\newcommand{\setc}[2]{\set{#1 \suchthatc #2}}			% Set (s.t. col)
+%	\renewcommand{\c}{^{\mathsf{c}}}						% Set complement
+%	
+%	\newcommand{\IF}{\txt{if }}							% If
+%	\newcommand{\IFC}{\txt{If }}						% If capitalalized
+%	\newcommand{\THEN}{\txt{ then }}					% Then
+%	\newcommand{\THENC}{\txt{Then }}					% Then capitalized	
+%	\newcommand{\AND}{\txt{ and }}						% And
+%	\newcommand{\OR}{\txt{ or }}						% Or
+%	\newcommand{\FOR}{\txt{ for }}						% For
+%	\newcommand{\FORALL}{\txt{ for all }}				% For all
+%	\newcommand{\WHERE}{\txt{ where }}					% Where
+%	\newcommand{\WHENEVER}{\txt{ whenever }}			% Whenever
+%	\newcommand{\FORSOME}{\txt{ for some }}				% For Some
+%	\newcommand{\ST}{\txt{ s.t. }}						% Such that, s.t.
+%	\newcommand{\WITH}{\txt{ with }}					% With
+%	\newcommand{\FORANY}{\txt{ for any }}				% For any
+%	
+%	\newcommand{\q}{\quad}								% Space or tab
+%	\newcommand{\qq}{\qquad}							% Space or tab with extra
+%
+%%	END_FOLD
+%
+%% ------------------------------------------------------------------------------------------------------ Complex Analysis    
+%%	BEGIN_FOLD
+%
+%	\newcommand{\conjugatet}[1]{\overline{#1}}			% Conjugate
+%
+%%	END_FOLD
+%
+%% ---------------------------------------------------------------------------------------------------- Algebraic Topology    
+%%	BEGIN_FOLD
+%
+%	\newcommand{\fundamental}[1]{\pi_1\pr{#1}}				% Fundamental Group
+%
+%%	END_FOLD
+%
+%% --------------------------------------------------------------------------------------------- Analysis / Pt-Set Topology   
+%%	BEGIN_FOLD
+%
+%	\newcommand{\restrict}[2]{\left.#1\right\vert_{#2}}		% Restricted Function
+%	
+%	\newcommand{\ntuple}[2]{\pr{#1_1, \dots, #1_#2}}		% n-Tuple
+%
+%	\newcommand{\Sum}[2]{\sum_{#1}^{#2}}					% Summation Shortcut
+%	\newcommand{\Int}[2]{\int_{#1}^{#2}}					% Integral Shortcut
+%
+%	\newcommand{\openball}[2]{B_{#2}\pr{#1}}				% Open ball
+%	\newcommand{\closedball}[2]{\bar{B}_{#2}\pr{#1}}		% Closed ball
+%
+%	\newcommand{\seq}[2][\null]{\set{#2}_{#1}}				% Sequence
+%	\newcommand{\Seq}[3]{\set{#3}_{#1}^{#2}}				% Sequence full defined
+%			
+%	\newcommand{\maxund}[2][\null]{\max_{#1} #2}			% Max Under
+%	\newcommand{\maxset}[1]{\max\set{#1}}					% Max Set
+%	\newcommand{\maxsets}[2]{\max\sets{#1}{#2}}				% Max Set (s.t.)
+%	\newcommand{\maxsetc}[2]{\max\setc{#1}{#2}}				% Max set (s.t. col)	
+%	
+%	\newcommand{\minund}[2][\null]{\min_{#2} #2}			% Min Under
+%	\newcommand{\minset}[1]{\min\set{#1}}					% Min Set
+%	\newcommand{\minsets}[2]{\min\sets{#1}{#2}}				% Min Set (s.t.)
+%	\newcommand{\minsetc}[2]{\min\setc{#1}{#2}}				% Min set (s.t. col)
+%	
+%	\newcommand{\supund}[2][\null]{\sup_{#1} #2}			% Supremum Under
+%	\newcommand{\suprememset}[1]{\sup\set{#1}}				% Supremum Set
+%	\newcommand{\supremumsets}[2]{\sup\sets{#1}{#2}}		% Supremum Set (s.t.)
+%	\newcommand{\supremumsetc}[2]{\sup\setc{#1}{#2}}		% Supremum Set (s.t. col)
+%		
+%	\newcommand{\infund}[2][\null]{\inf_{#1} #2}			% Infimum Under
+%	\newcommand{\infimumset}[1]{\inf\set{#1}}				% Supremum Set
+%	\newcommand{\infimumsets}[2]{\inf\sets{#1}{#2}}			% Infimum Set  (s.t.)
+%	\newcommand{\infimumsetc}[2]{\inf\setc{#1}{#2}}			% Infimum Set  (s.t. col)
+%	
+%	\newcommand{\abs}[1]{\left\lvert#1\right\rvert}							% Absolute Value			
+%	\newcommand{\norm}[2][\null]{\left\lVert#2\right\rVert_{#1}}			% Norm
+%	\newcommand{\inner}[3][\null]{\left\langle#2, #3\right\rangle_{#1}}		% Inner Product
+%	
+%	\newcommand{\limund}[1]{\lim_{#1}}						% Limit Under
+%	\newcommand{\toinf}{\to\infty}							% To infinity shortcut
+%	
+%	\newcommand{\co}{\txt{co}}								% Co
+%	
+%	%\newcommand{\closure}[1]{\text{cl}\pr{#1}}				% Closure (text)
+%	\newcommand{\closure}[1]{\overline{#1}}					% Closure (overline)
+%	\newcommand{\cl}[1]{\overline{#1}}					    % Closure (overline)
+%	
+%	\newcommand{\interior}[1]{\text{int}\pr{#1}}			% Interior (text)
+%	%\newcommand{\interior}[1]{#1^{\circ}}					% Interior (Circle)
+%	
+%	\newcommand{\core}[1]{\text{core}\pr{#1}}				% Algebraic Core
+%	\newcommand{\lin}[1]{\txt{lin}\pr{#1}}					% Algebraic Closure	
+%	
+%	\newcommand{\bd}[1]{\partial\pr{#1}}					% Boundary (text)
+%	\newcommand{\boundary}[1]{\partial\pr{#1}}				% Boundary (text)
+%	
+%	\newcommand{\mink}[2][\Omega]{p_{#1}\pr{#2}}			% Minkowski Function
+%	
+%	
+%%	END_FOLD
+%
+%% ------------------------------------------------------------------------------------------------------- Convex Analysis    
+%%	BEGIN_FOLD
+%
+%%	\newcommand{\leboutermeasure}[1]{\lambda^*\pr{#1}}		% Lebesgue Outter Measure
+%%	\newcommand{\lebmeasure}[1]{\lambda\pr{#1}}				% Lebesgue Measure
+%	
+%%	\def\upint{\mathchoice%															% Upper and Lower Intergrals
+%%		{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+%%		{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+%%		{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+%%		{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+%%		\int}
+%%	\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+%
+%%	END_FOLD
+%
+%% -------------------------------------------------------------------------------------------------------- Linear Algebra    
+%%	BEGIN_FOLD
+%
+%	\DeclareMathOperator{\spann}{span}					% Span
+%	\newcommand{\spanset}[1]{\spann\pr{#1}}				% Span set
+%
+%%	END_FOLD
+%
+%% --------------------------------------------------------------------------------------------------------- Number Theory    
+%%	BEGIN_FOLD
+%
+%	\newcommand{\lcm}[1]{\text{lcm}\pr{#1}}			% LCM
+%	\renewcommand{\gcd}[1]{\text{gcd}\pr{#1}}		% GCD
+%
+%%	END_FOLD
+%
+%% ---------------------------------------------------------------------------------------------------------- Group Theory    
+%%	BEGIN_FOLD
+%
+%	\newcommand{\compose}{\circ}		% Composition
+%	\DeclareMathOperator{\id}{id}		% Identity 
+%	\newcommand{\bop}{\bullet}			% Binary Operation
+%	\newcommand{\iv}{^{-1}}				% Inverse (shortcut)
+%
+%%	END_FOLD
+
+% ------------------------------------------------------------------------------------------------------- Category Theory    
+%%	BEGIN_FOLD
+%
+%	\newcommand{\CAT}{\mathsf{C}}								% Standard category
+%	\newcommand{\Grp}{\mathscr{Grp}}							% Group category
+%	\newcommand{\cat}[1]{\mathsf{#1}}							% Named category
+%	\newcommand{\Obj}[1]{\text{Obj}\pr{\cat{#1}}}				% Objects in category
+%	\newcommand{\Hom}[2][\null]{\text{Hom}_{\cat{#1}}\pr{#2}}	% Morphisms in category
+%	\newcommand{\End}[2][\null]{\text{End}_{\cat{#1}}\pr{#2}}	% Endomorphisms in category
+%	\newcommand{\Aut}[2][\null]{\text{Aut}_{\cat{#1}}\pr{#2}}	% Automorphisms in category
+%	\newcommand{\Inn}[2][\null]{\text{Inn}_{\cat{#1}}\pr{#2}}	% Innmorphisms in category
+%
+%%	END_FOLD
