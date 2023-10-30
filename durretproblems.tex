@@ -103,7 +103,15 @@ We show that if $X_n \to X : \Omega \to \RR$ almost surely and $f$ is continuous
 
 \subsection*{1.3.4 (TBD)}
 
-\subsection*{1.3.5 (TBD)}
+\subsection*{1.3.5}
+
+Let $f:\RR \to \RR$ and let $S_a = \{x \in \RR \st f(x) \leq a\}$. We show that $f$ is lower semicontinuous (that is: $\liminf_{y\to x}f(y) \geq f(x)$ for each $x \in \RR$) iff $S_a$ is closed for each $a \in \RR$. Suppose first that $f$ is l.s.c. and let $a \in \RR$. Let $(x_n) \sub S_a$ be a sequence such that $x_n \to y$. Hence for all $n$, we have $f(x_n) \leq a$. Then: \[f(y) \leq \liminf_{y \to x} f(y) = \liminf_{n \to \infty} f(x_n) \leq a.\] Hence $a \in S_a$, so $S_a$ is closed. 
+
+Conversely, suppose $S_a$ is closed for each $a \in \RR$. In particular, fixing $x \in \RR$ and $\e > 0$, we have that \[S = x \in \RR \st f(x) \leq f(x) - \e\] is closed. Now, observe that $x \in S^c$ since $f(x) > f(x) - \e$. Since $S^c$ is open, there exists an $N \in \NN$ and a sequence $y_k \to x$ such that $y_k \in S^c$ for all $k \geq N$. Then if $k \geq N$, we have \begin{align*}
+    f(y_k) &> f(x) - \e \quad \text{ since $y_k \in S^c$} \\
+    \inf_{k \geq N} f(y_k) &> f(x) - \e \quad \text{since $f(x)-\e$ is a lower bound} \\
+    \sup_{N} \inf_{k \geq N} f(y_k) &\geq f(x) \quad \text{since $\e$ was arbitrary}
+\end{align*} as desired. Since $x$ was arbitrary, $f$ is l.s.c. on $\RR$.
 
 \subsection*{1.3.6 (TBD)}
 
