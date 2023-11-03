@@ -16,7 +16,7 @@ $\chi \sim N(0,1)$ means $\chi$ has a normal distribution with mean 0 and std 1.
 (TBD) means to be done
 (NPR) means "needs peer review". If you are not the original author and agree the problem is correct, you can remove this tag.
 
-\subsection*{1.1.1 on midterm}
+\subsection*{1.1.1}
 
 We show that $(\RR, \mathcal{F}, P)$ is a probability space, where $\mathcal{F} = \{A \sub \RR \st A \in \aleph_0 \text{ or } A^c \in \aleph_0\}$ and $P(A) = 0$ if $A \in \aleph_0$ and $1$ if $A^c \in \aleph_0$. We must first show that $\mathcal{F}$ is a $\sigma$-algebra. 
 
@@ -33,17 +33,17 @@ It remains to check that $P$ is a probability measure.
     \item Let $(A_i) \sub \mathcal{F}$ be a countable sequence of disjoint sets. We must show $P(\bigcup A_i) = \sum_i P(A_i)$. Observe that if each $A_i$ is countable, then $\bigcup A_i$ is countable and so both sides of the equality are zero. We claim that in fact at most one $A_i$ can be uncountable. In that case, $\bigcup A_i$ is uncountable and $\sum_i P(A_i) = 1$, so the equality holds. Suppose $A_i$ and $A_j$ are two uncountable disjoint sets in $\mathcal{F}$. Then, \[\RR = \emptyset^c = (A_i \cap A_j)^c = A_i^c \cup A_j^c.\] This is a contradiction, since $A_i^c \cup A_j^c$ is countable, but $\RR$ is not. 
 \end{itemize}
 
-\subsection*{1.1.2 on midterm}
+\subsection*{1.1.2}
 
 Let $\mathcal{S}_d$ be the collection of sets of the form \[(a_1, b_1]\times ... \times (a_d, b_d]\sub \RR^d, -\infty\leq a_i < b_i \leq \infty\] and in addition the empty set. We claim that $\sigma(\mathcal{S}_d) = \mathcal{R}^d$, the Borel subsets of $\RR$. First observe that if $\mathcal{T}_d$ is the collection of sets of the form \[(a_1, b_1)\times ... \times (a_d, b_d)\sub \RR^d, -\infty\leq a_i < b_i \leq \infty\] then $\sigma(\mathcal{S}_d) = \sigma(\mathcal{T}_d)$, because if $U = (a_1, b_1)\times ... \times (a_d, b_d) \in \mathcal{T}_d$ then there is a countable sequence of sets in $\mathcal{S}_d$ whose union is $U$: specifically sets of the form $V_n = (a_1, b_1-\frac{1}{n}]\times ... \times (a_d, b_d-\frac{1}{n}]$. Similarly, since $\sigma$-algebras are also closed under countable intersection via de Morgan's laws, we can write any set of the form $(a_1, b_1]\times ... \times (a_d, b_d]$ as the intersection of sets of the form $(a_1, b_1+\frac{1}{n})\times ... \times (a_d, b_d+\frac{1}{n})$.
 
 It remains to show that $\s(\mathcal{T}_d) = \mathcal{R}^d$. Let $A$ be any open subset of $\RR^d$. Then let $\mathcal{D}$ be the subcollection of $\mathcal{T}_d$ consisting of sets contained in $A$. Then $\bigcup_{B \in \mathcal{D}} B = A$, since if $x \in A$, then there exists an open rectangle $R$ containing $x$ contained in $A$, since $A$ is open, and $R$ is a member of $\mathcal{D}$.
 
-\subsection*{1.1.3 on midterm}
+\subsection*{1.1.3}
 
 We show that the $\sigma$-alegbra $\mathcal{R}^d$ of Borel sets in $\RR^d$ is countably generated. It suffices to provide a countable collection of sets in $\mathcal{R}^d$ that generate any open subset of $\RR^d$. Let $Q$ be the following countable collection: \[Q = \{B(x, 1/n): x \in \QQ^d, n \in \NN\}\] where $B(x, 1/n) := \{y \in \RR^d: |x-y|<1/n\}$. Let $U \sub \RR^d$ be any open set. Let $Q' = Q \cap 2^U$ (i.e. the subcollection of $Q$ consisting of subsets of $U$). We claim that \[U = \bigcup_{V\in Q'} V\] Clearly $\bigcup_{V\in Q'} V \sub U$. For the other inclusion, let $x \in U$. Then, since $U$ is open, there exists a number $N \in \NN$ such that $B(x, 1/N) \sub U$. By the density of $\QQ^d \sub \RR^d$, there exists a point $p \in \QQ^d$ such that $d(x,p) < \frac{1}{2N}$. But then $x \in B(p, \frac{1}{2N})$ and this ball is a member of $Q'$ since if $z \in U^c$ is arbitrary then \[\frac{1}{N} < d(x,z) \leq d(x, p) + d(p, z) < \frac{1}{2N} + d(p,z)\] and hence $d(p,z) > \frac{1}{2N}$, implying $d(p, U^c) = \inf_{z\in U^c} d(p, z) > \frac{1}{2N}$. Thus $x \in \bigcup_{V\in Q'} V$.
 
-\subsection*{1.1.4 on midterm}
+\subsection*{1.1.4}
  \begin{enumerate}
     \item[(i)] Suppose $F_1 \sub F_1 \sub ...$ are $\s$-algebras. We show $F := \bigcup F_i$ is a $\s$-algebra. Let $A \in F$. Then $A \in F_k$ for some $k$. Hence $A^c \in F_k \sub F$, since $F_k$ is a $\s$-algebra. If also $B \in F$ then $B \in F_j$ for some $j$. and we have $A \in F_N$ for all $N \geq k$ and $B \in F_M$ for all $M \geq j$. In particular $A \in F_s$ and $B \in F_s$, where $s = \max{j,k}$ so $A \cup B \in  F_s$ since $F_s$ is a $\s$-algebra. Hence $A \cup B \in F$, and we are done.
     \item[(ii)] If $\W = \NN$ and $F_i := \sigma(\{1\},\{2\},...,\{i\})$ then each $F_i$ is a $\s$-algebra and we have $F_i\uparrow F=\bigcup F_i$, but $F$ is not a $\s$-algebra. If $U \in F$, then $U \in F_k$ for some $k$. But every set in $F_k$ is either finite or has finite complement in $\NN$ (because union preserves finiteness or finite-complementness and because complement switches them, so you can't get anything else stating from a collection of finite sets). So every set in $F$ is finite or has finite complement. But then $F$ doesn't contain some countable unions of its own sets, such as $\{2,4,6,...\}$.
@@ -51,7 +51,7 @@ We show that the $\sigma$-alegbra $\mathcal{R}^d$ of Borel sets in $\RR^d$ is co
 
 \subsection*{1.1.5 (TBD)}
 
-\subsection*{1.2.1 on midterm}
+\subsection*{1.2.1}
 
 Suppose $X$ and $Y$ are random variables on $(\W,F, P)$ and let $A \in F$. We show that if $Z(\w) := X(\w)$ for $\w \in A$ and $Z(\w) := Y(\w)$ for $\w \in A^c$, then $Z$ is a random variable. Clearly $Z$ maps $\W$ to $\RR$. It remains to show that $Z$ is $F$-measurable. Let $B$ be a Borel subset of $\RR$. Then: \begin{align*}
     Z^{-1}(B) &= \{\w \in \W \st Z(\w) \in B\} \\
@@ -62,15 +62,15 @@ Suppose $X$ and $Y$ are random variables on $(\W,F, P)$ and let $A \in F$. We sh
     & \in F,
 \end{align*} as desired.
 
-\subsection*{1.2.2 on midterm}
+\subsection*{1.2.2}
 
 Suppose $\chi \sim N(0,1)$. Using Theorem 1.2.6, we have the estimate: \[\left(\frac{1}{4} - \frac{1}{4^3}\right)e^{\frac{-4^2}{2}} \leq \int_4^\infty e^{\frac{-y^2}{2}} \,dy \leq \frac{1}{4}e^{\frac{-4^2}{2}}.\] Hence: \[\frac{1}{\sqrt{2\pi}}\left(\frac{1}{4} - \frac{1}{4^3}\right)e^{\frac{-4^2}{2}}\leq P(\chi \geq 4) \leq \frac{1}{4\sqrt{2\pi}}e^{\frac{-4^2}{2}}.\] i.e. \[3.13664 \cdot 10^{-5}\leq P(\chi \geq 4) \leq 3.34575 \cdot 10^{-5}\] Note that the true value is $P(\chi \geq 4) \approx 3.16712 \cdot 10^{-5}$.
 
-\subsection*{1.2.3 on midterm}
+\subsection*{1.2.3}
 
 We show that a distribution function has only countably many discontinuities. Suppose $J \sub \RR$ is the set of discontinuities of a distribution function $F$. Observe that, for each $a \in J$, we have $F(a) - F(a-) = F(a) - \lim_{y\uparrow a} F(y) > 0$ since $F$ is discontinuous at $a$ and nondecreasing. Hence the open intervals $(F(a-), F(a)) \sub \RR$ have nonzero measure. The intervals are also disjoint, since $F$ is nondecreasing. But then, \[\{(F(a-), F(a)) \st a \in J\}\] is a collection of nonempty disjoint intervals in $\RR$. We may (by the Axiom of Choice) define a function $\phi: J \to \QQ$ via $\phi(a) = q_a$ where $q_a$ is an arbitrary rational number in the interval $(F(a-), F(a))$. This function is injective because the intervals are disjoint. Hence the cardinality of $J$ must be at most the cardinality of $\QQ$. In particular $J$ cannot be uncountable.
 
-\subsection*{1.2.4 on midterm}
+\subsection*{1.2.4}
 
 We show that if $F(x) = P(X\leq x)$ is continuous, then $Y := F(X)$ has a uniform distribution on $(0,1)$. Since $F$ is continuous, for each $y \in (0,1)$ there exists by IVT an $x \in \RR$ such that $F(x) = y$. Define $G:(0,1) \to \RR$ via $G(y) = \sup \{x \in \RR \st F(x) = y\}$. Observe that: \begin{enumerate}
     \item[(a)] $G$ is strictly increasing, 
@@ -91,11 +91,11 @@ Let $X:\W \to \RR$ be continuous with density $f$. Let $g:\RR \to \RR$ be strict
 
 Let $a, b \in \text{range}(g(X(\W))) \sub \RR$. Since $g$ is strictly increasing, there are unique values $g^{-1}(a)$ and $g^{-1}(b)$ such that $g(g^{-1}(a)) = a$ and $g(g^{-1}(b))=b$. Thus consider the sets: \[A = \{\w \in \W \st a \leq g(X(\w))\leq  b\}\]\[A = \{\w \in \W \st g^{-1}(a) \leq X(\w)\leq  g^{-1}(b)\}\] Since $X$ has densite $f$, we have \[P(a\leq g(X) \leq b)=P(A) = \int_{g^{-1}(a)}^{g^{-1}(b)} f(s)  \,ds.\] Note that $s \in ({g^{-1}(a)},{g^{-1}(b)})$ and hence we may make the substitution $s = g^{-1}(y)$, since $g$ is strictly increasing. Hence $g(s) = y$ and we can rewrite the integral as: \[P(a\leq g(X) \leq b) =\int_{a}^{b} \frac{f(g^{-1}(y))}{g'(g^{-1}(y))}  \,dy\] as desired.
 
-\subsection*{1.2.6 on midterm}
+\subsection*{1.2.6}
 
 Suppose $X$ has a normal distribution with density $f$. We compute the density of $Y := e^X$. By 1.2.5, $Y$ has distribution function \[P(a<Y<b)=\int_a^b \frac{f(g^{-1}(y))}{g'(g^{-1}(y))} \,dy = \int_a^b \frac{f(\ln(y))}{e^{\ln(y)}} \, dy = \int_a^b \frac{\frac{1}{\sqrt{2\pi}} e^{-\frac12 (\ln(y))^2}}{y} \, dy\] Hence the density of $Y$ is $g(t) = \frac{1}{t\sqrt{2\pi}} e^{-\frac12 (\ln(t))^2}$.
 
-\subsection*{1.2.7 on midterm}
+\subsection*{1.2.7}
 
 Suppose $X$ has the density function $f$. We compute the density of $Y=X^2$. If $F$ is the CDF of $Y$ then: \[F(y) = P(Y\leq y) = P(X^2 \leq y) = P(|X| \leq \sqrt{y}) = P(-\sqrt{y} < X < \sqrt{y}) = \int_{-\sqrt{y}}^{\sqrt{y}} f(s) \,ds\] 
 
@@ -103,24 +103,25 @@ Observe that: \[F'(y) = \frac{d}{dy}\left(\int_{0}^{\sqrt{y}} f(s) \,ds - \int_{
 
 In the case that $X$ has a normal distribution, the density is \[\frac{\frac{1}{\sqrt{2\pi}} e^{-\frac12 (\sqrt{y})^2} + \frac{1}{\sqrt{2\pi}} e^{-\frac12 (-\sqrt{y})^2}}{2\sqrt{y}} = \frac{\frac{1}{\sqrt{2\pi}} e^{-\frac{y}{2}} + \frac{1}{\sqrt{2\pi}} e^{-\frac{y}{2}}}{2\sqrt{y}}=\frac{\frac{2e^{-\frac{y}{2}}}{\sqrt{2\pi}}}{2\sqrt{y}}=\frac{e^{-\frac{y}{2}}}{\sqrt{2\pi y}}\]
 
-\subsection*{1.3.1 (TBD)}
+\subsection*{1.3.1}
 
-\subsection*{1.3.2 on midterm}
+We show that if $\mathcal{A}$ generates $\mathcal{S}$ then $X^{-1}(\mathcal{A}) = \{X^{-1}(A)\st A \in \mathcal{A}\}$ generates $\s(X) := \{X^{-1}(B) \st B \in \mathcal{S}\}$. Let $U = X^{-1}(B)\in \s(X)$. Then $X(U) = B \in \mathcal{S}$. Since $\mathcal{A}$ generates $\mathcal{S}$, there exists a countable collection of sets $A_i \in \mathcal{A}$ such that $\bigcup A_i = B$. Hence $U = X^{-1} (\bigcup A_i) = \bigcup X^{-1}(A_i)$, i.e. $U \in \s(X^{-1}(\mathcal{A}))$.
+
+\subsection*{1.3.2}
 
 We show that $X_1 + X_2$ is a random variable if $X_1$ and $X_2$ are. Observe that \[\{X_1 + X_2 < a\} = \{X_2 < a - X_1\} = \bigcup_{q \in \QQ} \{X_2 < q < a - X_1\} = \bigcup_{q \in \QQ}  \{X_2 < q\} \cap \{q < a - X_1\} \] but the latter is in $\mathcal{F}$, since the union is countable and since $X_1$ and $X_2$ are random variables.
 
-\subsection*{1.3.3 on midterm}
+\subsection*{1.3.3}
 
 We show that if $X_n \to X : \Omega \to \RR$ almost surely and $f$ is continuous on $\RR$, then $f(X_n) \to f(X)$ almost surely. Assume that Recall that $X_n \to X$ a.s means $P(\Omega_0) = 1$, where \[\Omega_0 = \{\omega \in \Omega\st \lim_{n\to \infty} X_n(\omega) \text{ exists}\}.\] Let \[\Omega_1 =  \{\omega \in \Omega\st \lim_{n\to \infty} f(X_n(\omega)) \text{ exists}\}.\] If $\omega \in \Omega_0$, then the limit $X(\omega) := \lim_{n\to \infty} X_n(\omega)$ exists and so, by continuity, the limit \[\lim_{x\to \infty } f(X_n(\omega)) = f(\lim_{n\to \infty} X_n(\omega)) = f(X(\omega))\] exists. Hence $\Omega_0 \sub \Omega_1$. But then $1 \geq P(\Omega_1) \geq P(\Omega_0) = 1$, hence $f(X_n) \to f(X)$ a.s.
 
-\subsection*{1.3.4 (TBD) on midterm}
+\subsection*{1.3.4}
 
+We show that a continuous function $X: \RR^d \to \RR$ is measureable as a map from $(\RR^d, \mathscr{R}^d)\to (\RR, \mathscr{R})$. By Theorem 1.3.1, since $\mathscr{R}$ is generated by open sets, and since $\mathscr{R}^d$ is the smallest $\s$-algebra containing all open sets, it suffices to show that $X^{-1}(U)$ is open for any open set $U \sub \RR$. But this holds because $X$ is continuous.
 
+Moreover, we can show $\mathscr{R}^d$ is the smallest $\s$-algebra such that all continuous functions are measurable. Suppose $\mathscr{F}$ is another $\s$-algebra on $\RR^d$ that does not contain some open set $U$. Then there exists a continuous function $f:\RR^d \to \RR$ and some open set $O \in \mathscr{R}$ such that $f^{-1}(O) \sub U$ and hence is not $\mathscr{F}$-measureable. Specifically, let $V \sub U$ be open and define $f(x) = d(V, U^c)$. This function is continuous. Set $\delta= d(V, U^c)$ and then $f^{-1}((0,\delta))$ is open and a subset of $U$. So any $\s$-algebra such that all continuous functions are measurable must include all open sets, hence must contain $\mathscr{R}^d$.
 
-in notebook
-
-
-\subsection*{1.3.5 on midterm}
+\subsection*{1.3.5}
 
 Let $f:\RR \to \RR$ and let $S_a = \{x \in \RR \st f(x) \leq a\}$. We show that $f$ is lower semicontinuous (that is: $\liminf_{y\to x}f(y) \geq f(x)$ for each $x \in \RR$) iff $S_a$ is closed for each $a \in \RR$. Suppose first that $f$ is l.s.c. and let $a \in \RR$. Let $(x_n) \sub S_a$ be a sequence such that $x_n \to y$. Hence for all $n$, we have $f(x_n) \leq a$. Then: \[f(y) \leq \liminf_{y \to x} f(y) = \liminf_{n \to \infty} f(x_n) \leq a.\] Hence $a \in S_a$, so $S_a$ is closed. 
 
@@ -141,13 +142,13 @@ f
 
 \subsection*{1.3.9 (TBD)}
 
-\subsection*{1.4.1 on midterm}
+\subsection*{1.4.1}
 
 We show that if $f \geq 0$ and $\int f \, d\mu = 0$, then $f = 0$ a.e. Let $n \in \NN$ and consider the set $A_n = \{x \in \RR \st f(x) \geq \frac{1}{n}\}$. Observe that $A_n \uparrow A := \{x \in \RR \st f(x) > 0\}$. Hence, by continuity of measure from below we have $\mu(A_n)\uparrow \mu(A)$. We will show below that $\mu(A_n) = 0$, implying $\mu(A) = 0$. This gives the result because $\mu(A) = 0$ (together with $f \geq 0$) means precisely that $f = 0$ except on a set of measure zero.
 
 Observe that for each $x \in \RR$ we have $f(x) \geq  \frac{1}{n} \mathbb{I}_{A_n}(x)$, where $\mathbb{I}_{A_n}$ is the indicator function of $A_n$, since if $x \in A_n$, then $f(x) \geq \frac{1}{n} \cdot 1 = \frac{1}{n}\mathbb{I}_{A_n}(x)$ and if $x \notin A_n$, then $f(x) \geq 0 = \frac{1}{n}\mathbb{I}_{A_n}(x)$. We then have by monotonicity: \[0 = \int f \, d\mu  \geq \int  \frac{1}{n}\mathbb{I}_{A_n}(x)\, d\mu  =  \frac{1}{n}\mu(A_n) \geq 0,\] which implies $\mu(A_n) = 0$, as desired.
 
-\subsection*{1.4.2 (TBD) on midterm}
+\subsection*{1.4.2 (TBD)}
 
 
 
@@ -156,7 +157,7 @@ Observe that for each $x \in \RR$ we have $f(x) \geq  \frac{1}{n} \mathbb{I}_{A_
 
 \subsection*{1.4.3 (TBD)}
 
-\subsection*{1.4.4 on midterm}
+\subsection*{1.4.4}
 
 We prove the Riemann-Lebesgue lemma, that is: if $g$ is integrable then \[\lim_{n\to\infty} \int g(x) \cos(nx) \,dx = 0.\] Suppose first that $\phi$ is a step function with finite support. Then \begin{align*}
     \int \phi(x) \cos(nx) \,dx &  =\int \sum_{k=0}^{n} \1{(a_k,b_k)} \cos(nx)  \,dx\\
@@ -171,7 +172,7 @@ We prove the Riemann-Lebesgue lemma, that is: if $g$ is integrable then \[\lim_{
     &\to 0
 \end{align*} 
 
-\subsection*{1.5.1 on midterm}
+\subsection*{1.5.1}
 
 Suppose $m \in \RR$ such that $\mu(A_m)=0$ where $A_m = \{x : |g(x)| > m\}$. Then:
 \begin{align*}
@@ -186,30 +187,29 @@ Suppose $m \in \RR$ such that $\mu(A_m)=0$ where $A_m = \{x : |g(x)| > m\}$. The
 
 f
 
-\subsection*{1.5.3 (TBD) on midterm}
+\subsection*{1.5.3 (TBD)}
 
 
 in notebook
 
 
 
-\subsection*{1.5.4 on midterm}
+\subsection*{1.5.4}
 
 Let $f$ be integrable and let $E_m$ be disjoint sets with union $E$. Then we show \[\sum_{m=0}^{\infty} \int_{E_m}f \,d\mu = \int_{E}f \,d\mu \] Let $f_k := \sum_{m=0}^{k} f\cdot \1{E_m}$. Then $f_k \to f \cdot \1{E}$ a.e. since $E_m$ are disjoint. Note that $|f_n| \leq f$ and $f$ is integrable, so by DCT and linearity: \[\sum_{m=0}^{\infty} \int_{E_m}f \,d\mu = \lim_{k\to \infty}\int f_k \,d\mu = \int f \cdot \1{E} \,d\mu=\int_{E}f \,d\mu \] as desired.
 
-\subsection*{1.5.5 (TBD) on midterm}
+\subsection*{1.5.5 (TBD)}
 
-Suppose $g_n \uparrow g$ and $\int g_1^- \, d\mu < \infty$. We show that $\int g_n \, d\mu \uparrow\int g \, d\mu$. Let $f_n = g_n + g_1^-$ and observe that $f_n \geq 0$, since $g_n + g_1^- \geq g_n - g_1 \geq 0$. Hence by MCT: 
-\[\int \lim_{n\to\infty}  f_n = \lim_{n\to\infty} \int f_n = \lim_{n\to\infty} \int g_n + g_1^-\]
+Suppose $g_n \uparrow g$ and $\int g_1^- \, d\mu < \infty$. We show that $\int g_n \, d\mu \uparrow\int g \, d\mu$. Let $f_n = g_n + g_1^-$ and observe that $f_n \geq 0$, since $g_n + g_1^- \geq g_n - g_1 \geq 0$. Hence by MCT: \[\int \lim_{n\to\infty}  f_n = \lim_{n\to\infty} \int f_n = \lim_{n\to\infty} \int g_n + g_1^-\]
 
-\subsection*{1.5.6 (TBD) on midterm}
+\subsection*{1.5.6 (TBD)}
 
 
 in notebook
 
 
 
-\subsection*{1.5.7 on midterm}
+\subsection*{1.5.7}
 
 Let $f\geq 0$. We show that $\int f \wedge n \,d\mu \uparrow \int f \,d\mu$ as $n \to \infty$. Observe that for $f_n := f \wedge n$, we have $f_n \geq 0$ and $f_n\uparrow f$ (since for each $x$, $f(x) \leq N$ for some $N \in \NN$). Hence by MCT, $\int f_n \,d\mu \uparrow \int f \,d\mu$, as desired. 
 
@@ -222,7 +222,7 @@ Suppose $g \geq 0$. Let $\e >0$. Then by the above, there exists $n$ large enoug
 \end{align*}
 Now, if $g$ is integrable, we have $|g| = g^+ + g^- = g\vee 0 + (-g)\vee 0$, which is nonnegative, and the result holds.
 
-\subsection*{1.5.8 on midterm}
+\subsection*{1.5.8}
 
 Suppose $f$ is integrable on $[a,b]$ and define $g(x) := \int_a^x f(s) \,ds$. We show that $g$ is continuous on $(a,b)$. Let $x \in (a,b)$. Let $\e > 0$. Then, by 1.5.7, there exists a $\delta > 0$ such that $\int_{x}^{x + \delta} |f(s)|  \,ds < \e$. Hence, if $x <y <x+\delta$: \begin{align*}
     |g(y) - g(x)| &= \bigg| \int_a^y f(s) \,ds - \int_a^x f(s) \,ds\bigg| \\
